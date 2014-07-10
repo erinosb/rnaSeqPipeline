@@ -1,19 +1,41 @@
 #! /bin/sh/
 
 ################################################
-#autoAnalyzeRNAseq_v2.sh
+##autoAnalyzeRNAseq_v2.sh
 #
-#PROGRAM
+#This is a very basic RNA-seq pipeline I use for initial C. elegans miSeq and HiSeq data analysis.
+#Must be run within kure.
+#If running outside kure, update the locations for bowtie2 and 2bit files.
+#
+####PROGRAM
 #   autoAnalyzeRNAseq_v2.sh - To automate the analysis of RNA-seq data
 #
-#USAGE
-#   bash autoAnalyzeRNAseq_v2.sh <inputFile.txt> [inputFile2.txt] ... [options]
+####USAGE
+#   step1: load the following modules: tophat, samtools, bedtools, r, bowtie2, fastqc
+#   
+#   step2:
+#   bash autoAnalyzeRNAseq_v2.sh [options] <inputFile.txt> [inputFile2.txt] ... 
 #
 #ARGUMENTS
-#   <inputFile.txt>           This is the file from the sequencing facility. It is a fastq file containing Illumina sequencing reads generated from multiplexed samples
-#                             It should be unmultiplexed and trimmed of any barcode indices.
-#
-#
+       # --genome               Set the organism. Default is ce. Other options are mm.
+       # 
+       # --cleanmode              At the end of the project, use this option to clean up the dataspace. This will remove the following files:
+       #                                 <name>_cleanfile.fastq
+       #                                 <name>.bed file
+       #                                 bowtie left files
+       #                         It will also zip the following files:
+       #                                 <name>_quality.fastq
+       #                         And it will create a final output directory and drop the following files there:
+       #                                 <name_quality_fastq.gz
+       #                                 <name>.bam.gz
+       #                                 <name>.wig.gz
+       # 
+       # --maxmultihits          This is an option for calling within tophat. For more information, lookup max-multihits on tophat's manual webpage. Default is 20.
+       # --extension             This is the number of sequences to extend the .wig file. Should be equal to mean fragment length. Default is 100.
+       #                                 
+       #<inputFile.txt>           This is the file from the sequencing facility. It is a fastq file containing Illumina sequencing reads generated from multiplexed samples
+       #                          It should be unmultiplexed and trimmed of any barcode indices.
+       #                          
 #OPTIONS
 #   
 #AUTHOR
@@ -59,7 +81,7 @@ twobit=/proj/dllab/Erin/ce10/from_ucsc/seq/ce10.2bit                            
 #####################   USAGE   ######################
 usage="
     USAGE
-       bash autoAnalyzeRNAseq_v2.sh <inputFile.txt> [inputFile2.txt] ... [options]
+       bash autoAnalyzeRNAseq_v2.sh [options] <inputFile.txt> [inputFile2.txt] ... 
 
     ARGUMENTS
         --genome               Set the organism. Default is ce. Other options are mm.
@@ -75,7 +97,7 @@ usage="
                                         <name>.bam.gz
                                         <name>.wig.gz
         
-        --maxmultihits          This is an option for calling within tophat. For more information, lookup max-multihits on tophat's manual webpage. Default is 20.
+        --maxmultihits          Doesn't work This is an option for calling within tophat. For more information, lookup max-multihits on tophat's manual webpage. Default is 20.
         --extension             This is the number of sequences to extend the .wig file. Should be equal to mean fragment length. Default is 100.
                                         
        <inputFile.txt>           This is the file from the sequencing facility. It is a fastq file containing Illumina sequencing reads generated from multiplexed samples
