@@ -98,7 +98,8 @@ dated_log=${DATE}.log
 echo $(date +"%Y-%m-%d_%H:%M") | tee -a $dated_log
 
 #Start reporting
-printf "\tINITIATED autoAnalyzeRNAseq_v2.sh using command: \n\t"$0" "$*"\n" | tee -a $dated_log
+printf "\tINITIATED autoAnalyzeRNAseq_v2.sh using command: \n\t"$0" "| tee -a $dated_log
+for i in "$@"; do echo $i | tee -a $dated_log; done 
 printf "\n" | tee -a $dated_log
 
 if [ -z "$1" ]
@@ -107,6 +108,7 @@ if [ -z "$1" ]
     echo "$usage" 
     exit
 fi
+
 
 #check modules and load modules get module versions
 printf "\n"$(date +"%Y-%m-%d_%H:%M")"\t\tModule: Will check for required loaded modules and their versions:\n" | tee -a $dated_log
@@ -391,6 +393,10 @@ then
             then
             root=${file: 0:(${#file}-4)}
         fi
+        
+        printf "\n\n"$(date +"%Y-%m-%d_%H:%M")"\t\tCleaning up directories associated with... " |  tee -a $dated_log
+    
+            echo $root |  tee -a $dated_log
         
         mkdir $root"_opd/final_output" 2>&1 | tee -a $dated_log
         
