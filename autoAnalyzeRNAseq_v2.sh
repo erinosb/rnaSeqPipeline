@@ -81,7 +81,8 @@ twobit=/proj/dllab/Erin/ce10/from_ucsc/seq/ce10.2bit                            
 #####################   USAGE   ######################
 usage="
     USAGE
-       bash autoAnalyzeRNAseq_v2.sh [options] <inputFile.txt> [inputFile2.txt] ... 
+       step1:   load the following modules: tophat, samtools, bedtools, r, bowtie2, fastqc
+       step2:   bash autoAnalyzeRNAseq_v2.sh [options] <inputFile.txt> [inputFile2.txt] ... 
 
     ARGUMENTS
         --genome               Set the organism. Default is ce. Other options are mm.
@@ -105,7 +106,7 @@ usage="
         
     
     
-    OPTIONS"
+    "
 
 
 
@@ -126,6 +127,7 @@ printf "\n" | tee -a $dated_log
 
 if [ -z "$1" ]
   then
+    printf "\n"
     echo "ERROR: No inputFile supplied:" | tee -a $dated_log
     echo "$usage" 
     exit
