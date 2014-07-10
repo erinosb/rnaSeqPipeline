@@ -45,22 +45,21 @@ If running outside kure, update the locations for bowtie2 and 2bit files.
    Updated from:  autoAnalyzeRNAseq_EON_V1.sh --> January 2 2014
 
 ###BUGS
-  --> Module check is broken
-  --> potential bug --- can we use zinba with the updated bowtie2 files? Need to test this.
+  * Module check is broken
+  * potential bug --- can we use zinba with the updated bowtie2 files? Need to test this.
+  * Maxmultihits doesn't work
 
 ###TO FIX
   * Module check is broken
   * set variables up top
-  * Maxmultihits doesn't work
 
 
 ###POTENTIAL FUTURE EXPANSION
-  --> check whether the file is compressed. uncompress and re-compress. (or use zcat to uncompress)
-  --> get and record versions of software
-  --> paired end and single end compatible
-  --> option to scale wigs
-  --> set options to opt out of different parts of the pipeline, for example, opt out of the clean up process
-  --> Maxmultihits doesn't work
+  * check whether the file is compressed. uncompress and re-compress. (or use zcat to uncompress)
+  * get and record versions of software
+  * paired end and single end compatible
+  * option to scale wigs
+  * set options to opt out of different parts of the pipeline, for example, opt out of the clean up process
 
 ###LOG
   140708 Allow user to select a different organism
