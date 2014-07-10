@@ -49,9 +49,9 @@ If running outside kure, update the locations for bowtie2 and 2bit files.
   --> potential bug --- can we use zinba with the updated bowtie2 files? Need to test this.
 
 ###TO FIX
-  --> Module check is broken
-  --> set variables up top
-  --> Maxmultihits doesn't work
+  * Module check is broken
+  * set variables up top
+  * Maxmultihits doesn't work
 
 
 ###POTENTIAL FUTURE EXPANSION
