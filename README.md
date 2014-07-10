@@ -51,15 +51,14 @@ If running outside kure, update the locations for bowtie2 and 2bit files.
 
 ###TO FIX
   * Module check is broken
-  * set variables up top
-
+  * Maxmultihits doesn't work
 
 ###POTENTIAL FUTURE EXPANSION
   * check whether the file is compressed. uncompress and re-compress. (or use zcat to uncompress)
-  * get and record versions of software
+  * get and record versions of software DONE
   * paired end and single end compatible
   * option to scale wigs
-  * set options to opt out of different parts of the pipeline, for example, opt out of the clean up process
+  * set options to opt out of different parts of the pipeline, for example, opt out of the clean up process. HALFWAY DONE.
 
 ###LOG
   140708 Allow user to select a different organism
