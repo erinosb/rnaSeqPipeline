@@ -15,7 +15,7 @@ If running outside kure, update the locations for bowtie2 and 2bit files.
    step1: load the following modules: tophat, samtools, bedtools, r, bowtie2, fastqc
    
    step2:
-   bash autoAnalyzeRNAseq_v2.sh \<inputFile.txt\> [inputFile2.txt] ... [options]
+   bash autoAnalyzeRNAseq_v2.sh [options] \<inputFile.txt\> [inputFile2.txt] ... 
 
 ###ARGUMENTS
         --genome               Set the organism. Default is ce. Other options are mm.
