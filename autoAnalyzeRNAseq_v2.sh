@@ -63,6 +63,7 @@
 #
 #LOG
 #   140708 Allow user to select a different organism
+#   141001 fixed maxmultihits
 #
 #################################################
 

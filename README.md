@@ -31,7 +31,7 @@ If running outside kure, update the locations for bowtie2 and 2bit files.
                                         <name>.bam.gz
                                         <name>.wig.gz
         
-        --maxmultihits          Doesn't work. This is an option for calling within tophat. For more information, lookup max-multihits on tophat's manual webpage. Default is 20.
+        --maxmultihits          This is an option for calling within tophat. For more information, lookup max-multihits on tophat's manual webpage. Default is 20.
         --extension             This is the number of sequences to extend the .wig file. Should be equal to mean fragment length. Default is 100.
                                         
        <inputFile.txt>           This is the file from the sequencing facility. It is a fastq file containing Illumina sequencing reads generated from multiplexed samples
@@ -51,7 +51,7 @@ If running outside kure, update the locations for bowtie2 and 2bit files.
 
 ###TO FIX
   * Module check is broken
-  * Maxmultihits doesn't work
+
 
 ###POTENTIAL FUTURE EXPANSION
   * check whether the file is compressed. uncompress and re-compress. (or use zcat to uncompress)
@@ -62,3 +62,4 @@ If running outside kure, update the locations for bowtie2 and 2bit files.
 
 ###LOG
   140708 Allow user to select a different organism
+  141001 fixed maxmultihits
