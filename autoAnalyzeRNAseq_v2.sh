@@ -267,7 +267,7 @@ then
            printf "\n\n\t"$(date +"%Y-%m-%d_%H:%M")"\t\tRunning tophat on the following input files: "  | tee -a $dated_log
            qualityfile=$root"_opd/qfilter/"$root"_quality.fastq"
            mkdir $root"_opd/tophat" 2>&1 | tee -a $dated_log
-           cmd5="tophat -i 12000 -o "$root"_opd/tophat "$bowtie2path" "$qualityfile
+           cmd5="tophat -i 12000 -o "$root"_opd/tophat --max-multihits "$maxmultihits" "$bowtie2path" "$qualityfile
            printf "%s" "$cmd5"  | tee -a $dated_log
            $cmd5 2>&1 | tee -a $dated_log
            
